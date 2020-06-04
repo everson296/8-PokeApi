@@ -1,16 +1,17 @@
-
 const search = document.getElementById("pesquisar");
 const card = document.getElementById("listaDePokemons");
 const body = document.getElementById("body");
 const url = "https://pokeapi.co/api/v2";
 const pokemon = "pokemon";
-  
+
+
 async function getPoke(user){
     const cardResponse = await fetch(`${url}/${pokemon}/${user}`);
     const card = await cardResponse.json();
 
     return {card};
 };
+
 
 const showcard = (user) =>{
 
@@ -23,6 +24,7 @@ const showcard = (user) =>{
         </ul>
     `;
 }
+
 
 const loadPokemon = async() => {
     for(let i = 1; i <= 151; i++ ){
@@ -44,5 +46,6 @@ search.addEventListener("keyup", (e) =>{
         })
     }
 })
+
 
 loadPokemon();
