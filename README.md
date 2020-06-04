@@ -14,6 +14,8 @@
 
 3. Os tipos(types) dos pokemons devem ser tratados. Entres os pokémon tem uns que contem somente um tipo e outros que contem dois, quando coloco para que apareca os dois tipos aqueles que tem dois tipo aparecem e os que contem somente um tipo não aparece.
 
+###### solução para o item 3: criar uma div para para cada tipo, assim contendo ao todo duas divs pois este será o maximo de tipo que um pokémon poderá ter.
+
 <h1 align="center"> CRITÉRIOS DE APROVAÇÂO: </h1>
 
 CRITÈRIOS | ATINGIU?
