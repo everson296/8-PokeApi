@@ -36,15 +36,36 @@ Demostrou cooperação entre os colegas durante a resolução da SAS? | SIM
 
 <h1 align="center"> PASSO A PASSO DE COMO COMEÇAR NA API </h1>
 
+1. resgatar e transformar o conteudo a API em JSON;
 
+  const search = document.getElementById("pesquisar");
+  const card = document.getElementById("listaDePokemons");
+  const body = document.getElementById("body");
+  const url = "https://pokeapi.co/api/v2";
+  const pokemon = "pokemon";
 
+2. criar uma função para receber a url e retornar um card;
 
-
-
-
-
-
-
+  async function getPoke(user){
+      const cardResponse = await fetch(`${url}/${pokemon}/${user}`);
+      const card = await cardResponse.json();
+      return {card};
+  };
+  
+3. criar uma função para neste caso exibir um card com as informações do pokémon que o usuario quiser.
+  
+    const showcard = (user) =>{
+      card.innerHTML+=`
+          <ul class="containerPokemon">
+              <img class="imagem" title="imagem de ${user.name}" src="${user.sprites.front_default}">
+              <li class="id">#${user.id}</li>
+              <li class="nome">${user.name}</li>
+              <li class="tipo">${user.types[0].type.name}</li>
+          </ul>
+      `;
+    }
+    
+<h1 align="center"> FIM </h1>
 
 <p align="center">
   <img align="center" width="360" height="222" src="https://github.com/everson296/8-PokeApi/blob/master/pikachu.gif">
